@@ -19,6 +19,7 @@
 @import "components/language";
 @import "components/sponsor";
 @import "components/wp-classes";
+@import "components/featured";
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";
@@ -26,6 +27,18 @@
 @import "layouts/posts";
 @import "layouts/offers";
 @import "layouts/practices";
+
+/** Import theme esei styles */
+@import "components_esei/search";
+@import "components_esei/language";
+@import "components_esei/nav";
+@import "components_esei/slider";
+@import "components_esei/card";
+@import "components_esei/featured";
+@import "components_esei/social";
+@import "layouts_esei/header";
+@import "layouts_esei/sidebar";
+@import "layouts_esei/footer";
 
 // Research styles
 @import "components/research";

@@ -1,0 +1,106 @@
+.slick-slider-esei {
+  &.slick-dotted.slick-slider {
+    margin-bottom: 50px;
+  }
+
+  .slick-prev {
+    left: -50px;
+
+    &::before {
+      background-image: inline-svg("<svg version='1.1' xmlns='http://www.w3.org/2000/svg'><polyline fill='none' stroke='#{$slick-esei-arrow-color}' stroke-width='2' points='24,49 1,25 24,1'/></svg>");
+    }
+  }
+
+  .slick-next {
+    right: -50px;
+
+    &::before {
+      background-image: inline-svg("<svg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px'><polyline fill='none' stroke='#{$slick-esei-arrow-color}' stroke-width='2' points='1,1 24,25 1,49 '/></svg>");
+    }
+  }
+}
+
+.web-esei {
+  .uvigo-slide {
+    .slick-slide {
+      height: calc(540px + 220px);
+    }
+
+    .uvigo-slide__item__content {
+      display: none;
+    }
+
+    .uvigo-slide__item__footer {
+      padding: 10px 0;
+      height: 222px;
+      background-color: $primary;
+      color: white;
+
+      .container {
+        height: 100%;
+        font-size: 1.5rem;
+        font-weight: 200;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+
+        .row {
+          height: 100%;
+          align-items: center;
+
+          div[class*="col-"] {
+            &:last-child {
+              text-align: right;
+            }
+          }
+        }
+      }
+
+      .btn {
+        border-color: white;
+        text-align: center;
+      }
+    }
+  }
+
+  .uvigo-genericslider {
+    .slick-prev,
+    .slick-next {
+      position: absolute;
+      top: 45%;
+    }
+
+    .slick-slider-esei {
+      padding-top: 40px;
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .web-esei {
+    .uvigo-slide {
+      .slick-slide {
+        height: calc(540px + 130px);
+      }
+
+      .uvigo-slide__item__footer {
+        height: 132px;
+
+        .container {
+          font-size: 1.875rem;
+
+          .row {
+            div[class*="col-"] {
+              &:first-child {
+                padding-left: 0;
+              }
+
+              &:last-child {
+                padding-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+// ---
+// Botón apertura busca
+.web-esei {
+  .globalsearch__toggle-button {
+    color: $white;
+
+    &::before {
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+  }
+}

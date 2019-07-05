@@ -1,0 +1,108 @@
+.web-esei {
+  .card {
+    &.redonda {
+      border: none;
+
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 220px;
+        height: 220px;
+        border-radius: 110px;
+        object-fit: cover;
+      }
+
+      .card-body {
+        text-align: center;
+        padding: 2.5rem 2.5rem;
+
+        .card-title {
+          text-transform: uppercase;
+          letter-spacing: initial;
+          font-weight: 400;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .frontpage-floor {
+    &.icons {
+      background-color: $primary;
+      color: white;
+      padding: 65px 0 35px 0;
+
+      .card {
+        background-color: inherit;
+
+        .card-img-top {
+          max-width: 100px;
+          max-height: 100px;
+          align-self: center;
+        }
+
+        .card-body {
+          text-align: center;
+          color: #afafaf;
+          font-size: 0.875rem;
+          font-weight: 300;
+          letter-spacing: 0.5px;
+
+          .card-title {
+            letter-spacing: initial;
+            color: white;
+            font-weight: 400;
+            font-size: 1.125rem;
+
+            a.card-link {
+              color: white;
+            }
+          }
+        }
+      }
+
+      .card-group {
+        flex-flow: column;
+
+        .card {
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 992px) {
+  .web-esei {
+    .frontpage-floor {
+      &.icons {
+        .card-group {
+          flex-flow: row;
+          flex-wrap: wrap;
+
+          .card {
+            min-width: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .web-esei {
+    .frontpage-floor {
+      &.icons {
+        .card-group {
+          flex-flow: row;
+          flex-wrap: nowrap;
+        }
+
+        .card {
+          min-width: 150px;
+        }
+      }
+    }
+  }
+}

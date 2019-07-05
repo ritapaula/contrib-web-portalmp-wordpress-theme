@@ -15,4 +15,6 @@
 
   @include('partials/header-bottom')
 
+  @include('partials/header-esei-page')
+
 </header>

@@ -2,7 +2,7 @@
   <div class="container">
 
     <div class="row bottom-header-row no-gutters2">
-      <div class="brand-container col-9 col-lg-12">
+      <div class="brand-container col-9 col-lg-4">
 
           <div class="brand-header">
             @if (function_exists('the_custom_logo'))
@@ -24,16 +24,12 @@
 
       </div>
 
-      <div id="nav-container" class="menu-container col-12">
+      <div id="nav-container" class="menu-container col-8">
 
         <nav class="nav-primary">
           @if (has_nav_menu('primary_navigation'))
             {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav justify-content-end', 'container_id' => 'primary-navigation']) !!}
           @endif
-
-          <div class="header-widgets">
-            @include('partials.header-sidebar')
-          </div>
         </nav>
 
       </div>

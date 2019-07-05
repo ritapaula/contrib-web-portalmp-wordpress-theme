@@ -11,6 +11,10 @@
         </div>
     @endif
   </div>
+  <div class="uvigo-footer uvigo-pre-footer">
+      @php( $uvigo_pre_footer_content = apply_filters('uvigo_pre_footer_content', []) )
+      {!! $uvigo_pre_footer_content !!}
+  </div>
   <div class="uvigo-footer">
     <div id="reorder-footer" class="container">
       @include('partials/footer-uvigo')

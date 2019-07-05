@@ -4,6 +4,8 @@ namespace UVigoThemeWPApp;
 
 use WP_Query;
 
+const POST_CATEGORY_TERM_ANNOUNCEMENT_SLUG = 'aviso';
+
 /**
  * Shortcode "uvsliders"
  *
@@ -143,7 +145,66 @@ add_shortcode('uvigo_featured', function ($atts) {
     }
 
     sage('blade')->share('featured_list', $items);
+    sage('blade')->share('featured_list_classname', $args['classname']);
     $template = locate_template('shortcodes/featured');
+    $output = template($template);
+
+    return $output;
+});
+
+
+/**
+ * Shortcode "uvigo_announcement"
+ * 
+ * Lista Post de tipo Avixo
+ *
+ * @param  array $atts The attributes from the shortcode
+ * @return mixed $output Output of the buffer
+ */
+add_shortcode('uvigo_announcement', function ($atts) {
+
+    $defaults_atts = array(
+        'classname' => '',
+        'title' => 'Avisos',
+        'button_title' => 'Todos os avisos',
+        'limit'      => '4',
+        'button_url' => get_term_link(POST_CATEGORY_TERM_ANNOUNCEMENT_SLUG, 'category'),
+    );
+
+    $args = shortcode_atts($defaults_atts, $atts, 'uvigo_announcement');
+
+    $items = [];
+
+    // Buscamos os avisos
+    $posts_per_page = intval($args['limit']);
+    $query_args = [
+        'post_type' => ['post'],
+        'category_name'  => POST_CATEGORY_TERM_ANNOUNCEMENT_SLUG,
+        'posts_per_page' => $posts_per_page,
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    ];
+    $uvigo_featured = new WP_Query($query_args);
+    if ($uvigo_featured->have_posts()) {
+        while ($uvigo_featured->have_posts()) {
+            $uvigo_featured->the_post();
+            $template = locate_template('shortcodes/featured-announcements-items');
+            $output = template($template);
+
+            $items[] = [
+                'type' => get_post_type(),
+                'date' => get_the_date('Y-m-d h:i'),
+                'html' => $output,
+            ];
+        }
+    }
+
+    sage('blade')->share('featured_list', $items);
+    sage('blade')->share('featured_list_classname', $args['classname']);
+    sage('blade')->share('featured_title', $args['title']);
+    sage('blade')->share('featured_button_title', $args['button_title']);
+    sage('blade')->share('featured_button_url', $args['button_url']);
+    $template = locate_template('shortcodes/featured-announcements');
     $output = template($template);
 
     return $output;

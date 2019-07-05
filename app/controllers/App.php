@@ -70,6 +70,40 @@ class App extends Controller
         }
     }
 
+    /**
+     * Formato de selector de menú secuencial
+     *
+     * @param string $name_style
+     * @return void
+     */
+    public static function languagesMenuSelector($name_style = 'code')
+    {
+        if (class_exists('SitePress')) {
+            $languages = apply_filters('wpml_active_languages', null, array(
+                'skip_missing' => 0,
+            ));
+
+            if (! empty($languages) && count($languages) > 1) {
+                echo '<div class="language-switcher">';
+                echo '<ul>';
+
+                foreach ($languages as $language) {
+                    echo '<li class="language-link' . ( $language['active'] ? ' language-active' : '' ) . '">';
+                    echo '<a href="' . $language['url'] . '" title="' . $language['native_name'] . '" hreflang="' . $language['default_locale'] . '">';
+                    if ($name_style == 'code') {
+                        echo $language['language_code'];
+                    } else {
+                        echo $language['native_name'];
+                    }
+                    echo '</a></li>';
+                }
+
+                echo '</ul>';
+                echo '</div>';
+            }
+        }
+    }
+
     public static function breadcrumb()
     {
         if (is_404()) {
@@ -457,5 +491,70 @@ class App extends Controller
     public static function getFileTypeAlias($file_type)
     {
         return $file_type_alias = apply_filters('wpcoreuvigo_acf_file_subtype_alias', $file_type);
+    }
+
+    /** 
+     * ESEI : Id de la página raiz
+     */
+    public static function getRootPage()
+    {
+        if (is_page() && !is_front_page()) {
+            $ancestors = get_ancestors(get_the_ID(), 'page', 'post_type');
+            if (empty($ancestors)) {
+                // Propia página
+                $root_id = get_the_ID();
+            } else {
+                // Root
+                $root_id = array_pop($ancestors);
+            }
+            return $root_id;
+        }
+        return null;
+    }
+
+    /** 
+     * ESEI : Id de la página creada para almacenar información de la home
+     */
+    public static function getHomePage()
+    {
+        if (is_home()) {
+            $page = get_page_by_path('actualidade');
+            if (isset($page)) {
+                return $page->ID;
+            }
+        }
+        return null;
+    }
+
+    /** 
+     * ESEI: thumbnail de la pagina raíz
+     */
+    public static function theRootPageThumbnail()
+    {
+        if (is_home()) {
+            $root_id = App::getHomePage();
+        } else {
+            $root_id = App::getRootPage();
+        }
+        if (isset($root_id)) {
+            return '<div clasS="page-root-thumbnail">' . get_the_post_thumbnail($root_id) .'</span>';
+        }
+        return '';
+    }
+
+    /** 
+     * ESEI : titulo de la pagina raíz
+     */
+    public static function theRootPageTitle()
+    {
+        if (is_home()) {
+            $root_id = App::getHomePage();
+        } else {
+            $root_id = App::getRootPage();
+        }
+        if (isset($root_id)) {
+            return get_the_title($root_id);
+        }
+        return '';
     }
 }

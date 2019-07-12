@@ -493,7 +493,7 @@ class App extends Controller
         return $file_type_alias = apply_filters('wpcoreuvigo_acf_file_subtype_alias', $file_type);
     }
 
-    /** 
+    /**
      * ESEI : Id de la página raiz
      */
     public static function getRootPage()
@@ -512,21 +512,18 @@ class App extends Controller
         return null;
     }
 
-    /** 
+    /**
      * ESEI : Id de la página creada para almacenar información de la home
      */
     public static function getHomePage()
     {
         if (is_home()) {
-            $page = get_page_by_path('actualidade');
-            if (isset($page)) {
-                return $page->ID;
-            }
+            return get_option('page_for_posts');
         }
         return null;
     }
 
-    /** 
+    /**
      * ESEI: thumbnail de la pagina raíz
      */
     public static function theRootPageThumbnail()
@@ -542,7 +539,7 @@ class App extends Controller
         return '';
     }
 
-    /** 
+    /**
      * ESEI : titulo de la pagina raíz
      */
     public static function theRootPageTitle()

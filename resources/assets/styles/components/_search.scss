@@ -36,6 +36,90 @@
   }
 }
 
+.currentsearch {
+  background-color: rgba($primary, 0.98);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10001;
+  // visibility: hidden;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  transition: height 0s linear 300ms, opacity 300ms;
+
+  &.active {
+    // visibility: visible;
+    height: auto;
+    opacity: 1;
+    transition: height 0s linear 0s, opacity 300ms;
+  }
+
+  &__container {
+    @include make_container();
+    @include make-container-max-widths();
+
+    height: 100%;
+  }
+
+  &__content {
+    @include make_row();
+
+    height: 100%;
+  }
+
+  .globalsearch__toggle-button {
+    &.close-button {
+      position: absolute;
+      top: 5px;
+      right: 22px;
+      padding: 0;
+      color: #fff;
+      background-color: transparent;
+      border: none;
+
+      &::before {
+        font-size: 3.1rem;
+        font-weight: 400;
+      }
+    }
+  }
+
+  // .widgetsearch {}
+
+  .globalsearch__form {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    display: flex;
+  }
+
+  .globalsearch__form__label {
+    margin-right: 10px;
+  }
+
+  .form-control {
+    &::placeholder {
+      color: $gray-500;
+    }
+  }
+
+  .widgetsearch {
+    position: static;
+    margin: 20px 0 60px 0;
+
+    .globalsearch__form__button {
+      display: inline-block;
+
+      .btn {
+        min-width: 10rem;
+      }
+    }
+  }
+}
+
 // Search form
 
 .globalsearch {

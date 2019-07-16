@@ -5,12 +5,12 @@
         <a href="http://uvigo.gal" target="_blank"><img class="logo-uvigo" width="200" height="30" src="@asset('images/uvigo.svg')" alt="Universidade de Vigo"></a>
       </div>
       <div class="col justify-content-center text-center d-none d-md-block">
-        {{-- 
+        {{--
         <ul class="top-header-links">
           <li><a href="https://www.uvigo.gal/estudar/organizacion-academica/centros" target="_blank">Centros</a></li>
           <li><a href="https://www.uvigo.gal/estudar/organizacion-academica/departamentos" target="_blank">Departamentos</a></li>
           <li><a href="https://www.uvigo.gal/universidade/biblioteca" target="_blank">Biblioteca</a></li>
-        </ul> 
+        </ul>
         --}}
         @if (has_nav_menu('header_navigation'))
           {!! wp_nav_menu(['theme_location' => 'header_navigation', 'menu_class' => 'top-header-links', 'container_id' => 'header-navigation']) !!}
@@ -22,8 +22,7 @@
           <li><a href="https://secretaria.uvigo.gal/" class="elegant-icon" target="_blank"><span aria-hidden="true" class="icon_profile"></span> Secretaría</a></li>
         </ul>
         {!! App::languagesMenuSelector() !!}
-        <button type="button" id="globalsearch__toggle-button" data-toggle="search" data-target="#globalsearch" class="btn globalsearch__toggle-button" data-icon="&#x55;"><span class="sr-only">{{ _e( 'Search', 'uvigothemewp' ) }}</span></button>
-        
+        <button type="button" id="globalsearch__toggle-button" data-toggle="search" data-target="#currentsearch" class="btn globalsearch__toggle-button" data-icon="&#x55;"><span class="sr-only">{{ _e( 'Search', 'uvigothemewp' ) }}</span></button>
       </div>
       <div class="col justify-content-end text-right d-md-none">
         <button type="button" id="asdf" data-toggle="search2" data-target="#globalsearch" class="toggle-button">

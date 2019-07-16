@@ -155,7 +155,7 @@ add_shortcode('uvigo_featured', function ($atts) {
 
 /**
  * Shortcode "uvigo_announcement"
- * 
+ *
  * Lista Post de tipo Avixo
  *
  * @param  array $atts The attributes from the shortcode

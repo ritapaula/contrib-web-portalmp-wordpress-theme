@@ -20,6 +20,7 @@
     }
 
     .card-header {
+      font-size: 0.875rem;
       letter-spacing: 1px;
       color: $lightgray_color;
       padding: 0.625rem 0 0.625rem 0;
@@ -42,17 +43,22 @@
         .featured__item__date {
           color: inherit;
           font-weight: 300;
+
+          &::before {
+            color: $primary;
+          }
         }
 
         &.item_announcement {
           time {
             font-size: 0.875rem;
             font-weight: 300;
-            color: $lightgray_color;
+            color: #606060;
           }
 
           .featured__item__title {
             font-size: 1rem;
+            line-height: 1.5;
           }
         }
 
@@ -62,11 +68,11 @@
       }
     }
 
-    .featured__footer {
-      .btn {
-        text-align: center;
-      }
-    }
+    // .featured__footer {
+    //   .btn {
+    //     text-align: center;
+    //   }
+    // }
   }
 
   section.featured-announcements {
@@ -85,14 +91,14 @@
       .featured__footer {
         .btn {
           position: absolute;
-          bottom: -23px;
+          bottom: -1.3rem;
         }
       }
     }
   }
 
   section.uvigo-featured-esei {
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 
     .slick-slider-esei {
       margin-bottom: 20px;
@@ -106,6 +112,13 @@
       font-size: 2.125rem;
       font-weight: 300;
       letter-spacing: 3px;
+      color: $primary;
+    }
+
+    ul {
+      li {
+        margin-bottom: 0.625rem;
+      }
     }
   }
 }

@@ -35,7 +35,8 @@
   .web-esei {
     .nav-primary {
       .sub-menu {
-        top: calc(100% + 1px);
+        // top: calc(100% + 1px);
+        top: 72px;
         left: -5px;
         background-color: white;
 
@@ -45,8 +46,11 @@
           & > .nav-link {
             color: $primary;
             font-weight: 400;
-            padding-bottom: 0.625rem;
-            padding-top: 0.625rem;
+            // padding-bottom: 0.625rem;
+            // padding-top: 0.625rem;
+            padding-bottom: 0.3125rem;
+            padding-top: 0.3125rem;
+            line-height: 1.3em;
           }
         }
       }
@@ -68,10 +72,14 @@
 
         &.active {
           .sub-menu {
+            max-height: 600px;
+
             .nav-link {
               font-weight: 400;
-              padding-bottom: 0.625rem;
-              padding-top: 0.625rem;
+              // padding-bottom: 0.5625rem;
+              // padding-top: 0.5625rem;
+              padding-bottom: 0.3125rem;
+              padding-top: 0.3125rem;
             }
           }
         }

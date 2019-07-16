@@ -2,6 +2,10 @@
   display: block;
 }
 
+.widget-sidebar-esei-menu {
+  padding-top: 0;
+}
+
 .sidebar-menu {
   ul {
     li {
@@ -9,7 +13,7 @@
     }
 
     & .menu-parent {
-      padding-top: 14px;
+      padding-top: 20px;
 
       .menu-item {
         &::before {
@@ -30,8 +34,8 @@
 
       .menu-item-link {
         min-height: inherit;
-        padding-bottom: 0.5rem;
-        padding-top: 0.5rem;
+        padding-bottom: 0.375rem;
+        padding-top: 0.375rem;
       }
 
       & > .current-menu-item {
@@ -54,6 +58,7 @@
     color: $primary;
     background-color: inherit;
     padding-left: 0;
-    border-bottom: 2px solid #cfcfcf;
+    border-bottom: 1px solid $primary;
+    box-shadow: 0 1px 0 rgba($primary, 0.4);
   }
 }

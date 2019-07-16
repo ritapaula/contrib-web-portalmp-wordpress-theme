@@ -19,8 +19,8 @@
     ]
   },
   "publicPath": "/wp-content/themes/uvigothemewp",
-  "devUrl": "http://multiproposito.uvigo.gal",
-  "proxyUrl": "http://localhost:3000",
+  "devUrl": "https://esei.ideit.software",
+  "proxyUrl": "https://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [
     "app/**/*.php",

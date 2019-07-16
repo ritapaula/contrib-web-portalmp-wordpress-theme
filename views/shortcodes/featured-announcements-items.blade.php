@@ -4,7 +4,7 @@
       <time class="updated" datetime="{{ get_post_time('c', true) }}">{{ get_the_date() }}</time>
     </div>
     <div class="card-body">
-      <h3 class="featured__item__title"><a href="{{ get_permalink() }}">{{ get_the_title() }}</a></h3>
+      <h3 class="featured__item__title">{{ get_the_title() }}</h3>
       @php(the_excerpt())
     </div>
   </div>

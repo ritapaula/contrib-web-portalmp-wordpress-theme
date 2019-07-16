@@ -23,7 +23,12 @@
 .web-esei {
   .uvigo-slide {
     .slick-slide {
-      height: calc(540px + 220px);
+      // height: calc(480px + 220px);
+      height: 700px;
+    }
+
+    .uvigo-slide__item {
+      height: 480px;
     }
 
     .uvigo-slide__item__content {
@@ -40,7 +45,7 @@
         height: 100%;
         font-size: 1.5rem;
         font-weight: 200;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+        // border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 
         .row {
           height: 100%;
@@ -79,7 +84,8 @@
   .web-esei {
     .uvigo-slide {
       .slick-slide {
-        height: calc(540px + 130px);
+        // height: calc(480px + 130px);
+        height: 610px;
       }
 
       .uvigo-slide__item__footer {

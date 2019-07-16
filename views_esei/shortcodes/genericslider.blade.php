@@ -30,9 +30,7 @@
               }
             }
           ]}'>
-
           {!! $genericslider_content !!}
-
       </div>
     </div>
   </div>

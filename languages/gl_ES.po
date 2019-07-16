@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: UVigo Multipurpose WordPress Theme\n"
-"POT-Creation-Date: 2019-02-15 15:01+0100\n"
-"PO-Revision-Date: 2019-02-15 15:01+0100\n"
+"POT-Creation-Date: 2019-07-16 13:23+0200\n"
+"PO-Revision-Date: 2019-07-16 13:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: gl_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.9\n"
+"X-Generator: Poedit 2.2.3\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -53,8 +53,9 @@ msgstr "Os comentarios están pechados."
 #: views/partials/content-page.blade.php:17
 #: views/partials/content-single-uvigo-inv-group.blade.php:61
 #: views/partials/content-single-uvigo-inv-staff.blade.php:39
-#: views/partials/content-single-uvigo-offer.blade.php:28
-#: views/partials/content-single.blade.php:21
+#: views/partials/content-single-uvigo-offer.blade.php:32
+#: views/partials/content-single-uvigo-practice.blade.php:32
+#: views/partials/content-single.blade.php:27
 msgid "Pages:"
 msgstr "Páxinas:"
 
@@ -76,7 +77,7 @@ msgid "Code"
 msgstr "Código"
 
 #: views/partials/content-single-uvigo-inv-group.blade.php:33
-#: views/partials/content-single-uvigo-teacher.blade.php:56
+#: views/partials/content-single-uvigo-teacher.blade.php:75
 msgid "Contact Data"
 msgstr "Datos de contacto"
 
@@ -85,18 +86,18 @@ msgid "Address"
 msgstr "Enderezo"
 
 #: views/partials/content-single-uvigo-inv-group.blade.php:39
-#: views/partials/content-single-uvigo-teacher.blade.php:62
+#: views/partials/content-single-uvigo-teacher.blade.php:81
 msgid "Phone"
 msgstr "Teléfono"
 
 #: views/partials/content-single-uvigo-inv-group.blade.php:43
 #: views/partials/content-single-uvigo-inv-staff.blade.php:31
-#: views/partials/content-single-uvigo-teacher.blade.php:66
+#: views/partials/content-single-uvigo-teacher.blade.php:92
 msgid "Email"
 msgstr "Correo electrónico"
 
 #: views/partials/content-single-uvigo-inv-group.blade.php:47
-#: views/partials/content-single-uvigo-subject.blade.php:83
+#: views/partials/content-single-uvigo-subject.blade.php:84
 msgid "Web"
 msgstr ""
 
@@ -109,7 +110,7 @@ msgid "Personal Data"
 msgstr ""
 
 #: views/partials/content-single-uvigo-inv-staff.blade.php:19
-#: views/partials/content-single-uvigo-subject.blade.php:79
+#: views/partials/content-single-uvigo-subject.blade.php:80
 #: views/partials/content-single-uvigo-teacher.blade.php:23
 msgid "Department"
 msgstr "Departamento"
@@ -153,17 +154,17 @@ msgstr "Tipo"
 msgid "Credits"
 msgstr "Créditos"
 
-#: views/partials/content-single-uvigo-subject.blade.php:75
+#: views/partials/content-single-uvigo-subject.blade.php:76
 msgid "Learning outcomes"
 msgstr "Resultados de aprendizaxe"
 
-#: views/partials/content-single-uvigo-subject.blade.php:94
-msgid "Responsible teachers"
-msgstr "Profesor responsable"
-
-#: views/partials/content-single-uvigo-subject.blade.php:104
+#: views/partials/content-single-uvigo-subject.blade.php:96
 msgid "Teachers"
 msgstr "Profesorado"
+
+#: views/partials/content-single-uvigo-subject.blade.php:104
+msgid "Responsible teachers"
+msgstr "Profesor responsable"
 
 #: views/partials/content-single-uvigo-subject.blade.php:110
 msgid "Teaching guide"
@@ -173,43 +174,47 @@ msgstr "Guía docente"
 msgid "Link DocNet"
 msgstr "Enlace a DockNet"
 
-#: views/partials/content-single-uvigo-teacher.blade.php:31
+#: views/partials/content-single-uvigo-teacher.blade.php:33
 msgid "Dedication"
 msgstr "Dedicación"
 
-#: views/partials/content-single-uvigo-teacher.blade.php:35
+#: views/partials/content-single-uvigo-teacher.blade.php:37
 msgid "Subjects"
 msgstr "Asignaturas"
 
-#: views/partials/content-single-uvigo-teacher.blade.php:39
+#: views/partials/content-single-uvigo-teacher.blade.php:44
 msgid "Personal Web"
 msgstr "Web persoal"
 
-#: views/partials/content-single-uvigo-teacher.blade.php:43
+#: views/partials/content-single-uvigo-teacher.blade.php:52
 msgid "Teaching experience"
 msgstr "Experiencia docente"
 
-#: views/partials/content-single-uvigo-teacher.blade.php:47
+#: views/partials/content-single-uvigo-teacher.blade.php:60
 msgid "Research experience"
 msgstr "Experiencia investigadora"
 
-#: views/partials/content-single-uvigo-teacher.blade.php:51
+#: views/partials/content-single-uvigo-teacher.blade.php:68
 msgid "Professional experience"
 msgstr "Experiencia profesional"
 
-#: views/partials/content-single-uvigo-teacher.blade.php:58
+#: views/partials/content-single-uvigo-teacher.blade.php:77
 msgid "Office"
 msgstr "Despacho"
 
-#: views/partials/content-single-uvigo-teacher.blade.php:70
+#: views/partials/content-single-uvigo-teacher.blade.php:87
+msgid "Fax"
+msgstr ""
+
+#: views/partials/content-single-uvigo-teacher.blade.php:96
 msgid "Tutorials 1C"
 msgstr "Titorías 1C"
 
-#: views/partials/content-single-uvigo-teacher.blade.php:74
+#: views/partials/content-single-uvigo-teacher.blade.php:100
 msgid "Tutorials 2C"
 msgstr "Titorías 2C"
 
-#: views/partials/content-single-uvigo-teacher.blade.php:78
+#: views/partials/content-single-uvigo-teacher.blade.php:106
 msgid "Tutorials other periods"
 msgstr "Titorías Outros Períodos"
 
@@ -230,23 +235,28 @@ msgid "Geographic"
 msgstr "Ámbito Xeográfico"
 
 #: views/partials/header-bottom.blade.php:18
-#: views/partials/header-uvigo.blade.php:26
+#: views/partials/header-uvigo.blade.php:29
 msgid "Menu"
 msgstr "Menú"
 
-#: views/partials/header-uvigo.blade.php:21
+#: views/partials/header-uvigo.blade.php:25
 #: views/partials/searchform.blade.php:8 views/partials/searchform.blade.php:12
 msgid "Search"
 msgstr "Buscar"
 
-#: views/partials/header.blade.php:7 app/widgets/widget-menu.php:49
-#: app/wordpress/gallery.php:206 app/wordpress/gallery.php:207
+#: views/partials/header.blade.php:6 app/widgets/widget-menu.php:49
+#: app/widgets_esei/widget-menu-esei.php:52 app/wordpress/gallery.php:206
+#: app/wordpress/gallery.php:207
 msgid "Close"
 msgstr "Pechar"
 
 #: views/partials/searchform.blade.php:4
-msgid "Search for:"
-msgstr "Buscar por:"
+msgid "Insert words to search"
+msgstr "Introduce palabras a buscar"
+
+#: views/partials/social.blade.php:3
+msgid "Show share buttons"
+msgstr "Mostrar os botóns de compartir"
 
 #: views/shortcodes/featured-old.blade.php:3
 #: views/shortcodes/featured.blade.php:3
@@ -487,15 +497,15 @@ msgstr "Bloque azul"
 msgid "Dark Blue block"
 msgstr "Bloque azul oscuro"
 
-#: app/controllers/app.php:29
+#: app/controllers/App.php:29
 msgid "Latest Posts"
 msgstr "Últimos posts"
 
-#: app/controllers/app.php:35
+#: app/controllers/App.php:35
 msgid "Search Results for"
-msgstr "Resultados para %s"
+msgstr "Resultados de busca para"
 
-#: app/controllers/app.php:38
+#: app/controllers/App.php:38
 msgid "Not Found"
 msgstr "Non atopado"
 
@@ -503,36 +513,40 @@ msgstr "Non atopado"
 msgid "Continued"
 msgstr "Continuar"
 
-#: app/filters.php:287
+#: app/filters.php:316
 msgctxt "post_type_archive_title"
 msgid "News"
 msgstr "Novas"
 
-#: app/setup.php:62
+#: app/setup.php:65
 msgid "Primary Navigation"
 msgstr "Navegación principal"
 
-#: app/setup.php:125
+#: app/setup.php:66
+msgid "Header Navigation"
+msgstr "Navegación principal"
+
+#: app/setup.php:130
 msgid "Primary"
 msgstr "Principal"
 
-#: app/setup.php:129
+#: app/setup.php:134
 msgid "Header"
 msgstr "Cabeceira"
 
-#: app/setup.php:133
+#: app/setup.php:138
 msgid "Footer"
 msgstr "Pé de páxina"
 
-#: app/setup.php:141
+#: app/setup.php:146
 msgid "Sponsor"
 msgstr "Patrocinador"
 
-#: app/setup.php:150
+#: app/setup.php:155
 msgid "Home Sidebar"
 msgstr "Barra lateral da Home"
 
-#: app/setup.php:162
+#: app/setup.php:167
 msgid "Custom sidebar created by user."
 msgstr "Barra lateral creada por usuario."
 
@@ -546,16 +560,17 @@ msgstr ""
 msgid "An unknown error occurred"
 msgstr ""
 
-#: app/widgets/widget-groupevent.php:17
+#: app/widgets/widget-groupevent.php:16
 msgid "Widget for GroupEvent"
 msgstr "Widget para grupos de eventos."
 
-#: app/widgets/widget-groupevent.php:19
+#: app/widgets/widget-groupevent.php:18
 msgid "Group event"
 msgstr "Grupo de evento"
 
-#: app/widgets/widget-groupevent.php:53 app/widgets/widget-menu.php:79
+#: app/widgets/widget-groupevent.php:52 app/widgets/widget-menu.php:79
 #: app/widgets/widget-news.php:107 app/widgets/widget-social.php:59
+#: app/widgets_esei/widget-menu-esei.php:84
 msgid "Title:"
 msgstr "Título:"
 
@@ -567,13 +582,13 @@ msgstr "Menú secundario para a columna lateral."
 msgid "Sidebar menu"
 msgstr "Menú de barra lateral"
 
-#: app/widgets/widget-menu.php:46
+#: app/widgets/widget-menu.php:46 app/widgets_esei/widget-menu-esei.php:49
 msgid "Navigation"
 msgstr "Navegación"
 
 #: app/widgets/widget-news.php:17
 msgid "List latest news"
-msgstr ""
+msgstr "Listar últimas novas"
 
 #: app/widgets/widget-news.php:20
 msgid "News widget"
@@ -607,8 +622,18 @@ msgstr "Redes Sociais"
 msgid "Classname:"
 msgstr "Classname:"
 
+#: app/widgets_esei/widget-menu-esei.php:20
+#, fuzzy
+#| msgid "Secondary menu for sidebar column."
+msgid "Secondary menu for sidebar column of ESEI."
+msgstr "Menú secundario para a columna lateral."
+
+#: app/widgets_esei/widget-menu-esei.php:22
+msgid "Sidebar menu of ESEI"
+msgstr "Menú de barra lateral ESEI"
+
 #: app/wordpress/gallery.php:128 app/wordpress/gallery.php:167
-#: app/wordpress/menu-walker.php:120
+#: app/wordpress/menu-walker.php:121
 msgid "Open"
 msgstr "Abrir"
 
@@ -636,15 +661,15 @@ msgstr "É necesario usar Wordpress 4.9.0 ou superior."
 msgid "Invalid WordPress version"
 msgstr "Versión Wordpress inválida"
 
-#: functions.php:66
+#: functions.php:75
 msgid "You must run <code>composer install</code> from the Sage directory."
 msgstr "Debe executar <code>composer install</code> dende o directorio Sage."
 
-#: functions.php:67
+#: functions.php:76
 msgid "Autoloader not found."
 msgstr ""
 
-#: functions.php:84
+#: functions.php:93
 #, php-format
 msgid "Error locating <code>%s</code> for inclusion."
 msgstr ""
@@ -668,6 +693,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://ideit.es/"
 msgstr ""
+
+#~ msgid "Search for:"
+#~ msgstr "Buscar por:"
 
 #~ msgid "New"
 #~ msgstr "Nova"

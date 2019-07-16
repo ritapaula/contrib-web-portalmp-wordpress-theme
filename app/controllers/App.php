@@ -517,9 +517,8 @@ class App extends Controller
      */
     public static function getHomePage()
     {
-        if (is_home()) {
-            return get_option('page_for_posts');
-        }
+        return get_option('page_for_posts');
+
         return null;
     }
 
@@ -528,14 +527,16 @@ class App extends Controller
      */
     public static function theRootPageThumbnail()
     {
-        if (is_home()) {
+        if (is_home() || is_singular(['post', 'uvigo-event'])) {
             $root_id = App::getHomePage();
         } else {
             $root_id = App::getRootPage();
         }
+
         if (isset($root_id)) {
-            return '<div clasS="page-root-thumbnail">' . get_the_post_thumbnail($root_id) .'</span>';
+            return get_the_post_thumbnail($root_id, 'full', [ 'class' => 'header-image' ]);
         }
+
         return '';
     }
 
@@ -544,7 +545,7 @@ class App extends Controller
      */
     public static function theRootPageTitle()
     {
-        if (is_home()) {
+        if (is_home() || is_singular(['post', 'uvigo-event'])) {
             $root_id = App::getHomePage();
         } else {
             $root_id = App::getRootPage();

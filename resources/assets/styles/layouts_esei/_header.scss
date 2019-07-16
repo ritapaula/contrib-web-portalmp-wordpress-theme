@@ -1,30 +1,59 @@
 .header-esei-page {
   position: relative;
+  background-color: $secondary;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
 
-  h1 {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    margin: 0;
-    color: #f1f1f1;
-    font-size: 10rem;
-    font-weight: 400;
-    text-align: center;
-    line-height: 8rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+  body.home & {
+    display: none;
   }
 
-  .page-root-thumbnail {
-    width: 100%;
-    min-height: 360px;
-    background-color: $primary;
+  @include media-breakpoint-up(lg) {
+    height: 360px;
+  }
 
-    img {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
+  h1 {
+    margin: 0;
+    color: #fff;
+    font-family: Campus-Light, sans-serif;
+    font-weight: 400;
+    font-size: 6rem;
+    line-height: 5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    white-space: nowrap;
+
+    @include media-breakpoint-up(sm) {
+      margin-left: calc(calc(100% - 536px) / 2);
     }
+
+    @include media-breakpoint-up(md) {
+      margin-left: calc(calc(100% - 728px) / 2);
+      font-size: 7rem;
+      line-height: 6rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-left: calc(calc(100% - 952px) / 2);
+      font-size: 8rem;
+      line-height: 7rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin-left: calc(calc(100% - 1160px) / 2);
+      font-size: 10rem;
+      line-height: 8rem;
+    }
+  }
+
+  .header-image {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    object-position: center;
   }
 }
 

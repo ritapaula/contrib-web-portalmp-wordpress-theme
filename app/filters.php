@@ -292,6 +292,23 @@ add_filter('uvigothemewp/display_sidebar', function ($display) {
 });
 
 /**
+ * Display Social Share filter
+ */
+add_filter('uvigothemewp/display_social_share', function ($display_social_share) {
+    static $display_social_share;
+
+    $base_template_page = basename(get_page_template());
+
+    isset($display_social_share) || $display_social_share = in_array(true, [
+        // The Social Share Buttons will be displayed if any of the following return true
+        is_single(),
+        ( is_page() && ! is_front_page() ),
+    ]);
+    return $display_social_share;
+});
+
+
+/**
  * Change 'post' article
  */
 add_filter('post_type_single_title', function ($title, $post_type) {
@@ -466,3 +483,10 @@ add_filter('uvigothemewp/template/single-uvigo-form/data', function (array $data
     $data['uvigo_form_document_odt'] = get_field('uvigo_form_document_odt');
     return $data;
 });
+
+/**
+ * Acción para añadir los botones sociales
+ */
+add_action('wp_footer', function () {
+    echo template('partials.social');
+}, 100);

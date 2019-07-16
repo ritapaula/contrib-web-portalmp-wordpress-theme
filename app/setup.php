@@ -32,6 +32,9 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('google/fonts/baskerville', 'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700', false, null);
     wp_enqueue_style('uvigothemewp/main.css', asset_path('styles/main.css'), false, null);
     wp_enqueue_script('uvigothemewp/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
+
+    wp_enqueue_script('uvigothemewp/share', '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56e1bdbd5544920a', null, null, true);
+    // wp_enqueue_script('uvigothemewp/share', '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d2cc0ea6a40472d', null, null, true);
 }, 100);
 
 /**

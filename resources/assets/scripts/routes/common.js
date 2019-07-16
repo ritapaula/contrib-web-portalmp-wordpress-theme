@@ -88,6 +88,38 @@ export default {
       $(this).closest('form').submit();
     });
 
+
+    const $shareBtn = $('#share-buttons');
+    if ( $shareBtn.length > 0 ) {
+      if (typeof(addthis) !== 'undefined') {
+        addthis.addEventListener('addthis.ready', function() {
+
+          console.log('Load addthis');
+
+          setTimeout(function() {
+            $shareBtn.on('click', '.btn-share', function(event) {
+              event.preventDefault();
+              const $container = $(event.target).parent().find('.share-buttons-container');
+              $container.slideToggle('400', function() {});
+            });
+          }, 1000);
+
+          // Para ocultar o menú social cando facemos click fóra
+          $(document).on('click', function(event) {
+            if ( $(event.target).closest('.share-buttons').length === 0 ) {
+              $('.share-buttons .share-buttons-container').slideUp('400');
+            }
+          });
+        });
+      }
+      const top = $('.wrap').offset().top + 40;
+      $shareBtn.css('top', top + 'px');
+        // } else {
+        //     shareBtn.css('top', 'auto');
+        // }
+      $shareBtn.addClass('visible');
+    }
+
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired

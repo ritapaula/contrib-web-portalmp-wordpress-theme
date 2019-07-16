@@ -153,6 +153,17 @@ function display_sidebar()
 }
 
 /**
+ * Determine whether to show the Share Social Icons
+ * @return bool
+ */
+function display_social_share()
+{
+    static $display_social_share;
+    isset($display_social_share) || $display_social_share = apply_filters('uvigothemewp/display_social_share', false);
+    return $display_social_share;
+}
+
+/**
  * Display Date from String on ISO8601
  * @return string
  */

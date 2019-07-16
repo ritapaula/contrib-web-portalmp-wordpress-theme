@@ -36,3 +36,123 @@ $social-color-appleu-icon: red !default;
     }
   }
 }
+
+.addthis-smartlayers {
+  opacity: 1;
+}
+
+.share-buttons {
+  .btn-share {
+    min-width: 10px;
+    text-align: center;
+
+    &:hover {
+      background-color: $secondary;
+    }
+
+    &::before {
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      font-size: 1.25rem;
+      color: $white;
+    }
+  }
+}
+
+.share-buttons2 {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  // transition: opacity 0.5s;
+  z-index: 500;
+
+  &.visible {
+    opacity: 1;
+  }
+
+  .share-buttons-container {
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+
+  .at-resp-share-element {
+    .at-share-btn-elements {
+      background-color: $white;
+      border-top: 1px solid $white;
+    }
+
+    .at-icon {
+      fill: $secondary !important;
+
+      @include media-breakpoint-up(md) {
+        fill: $primary !important;
+      }
+    }
+
+    .at-share-btn {
+      margin: 0 0 0 0 !important;
+      padding: 6px 2px 6px 2px;
+      outline: none;
+      transition: all 0.1s;
+      width: 20%;
+      text-align: center;
+      background-color: $gray-300 !important;
+      border-left: 1px solid $white;
+
+      &:first-child {
+        border-left: none;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $primary !important;
+        transform: none;
+        outline: none;
+
+        .at-icon {
+          fill: rgb(255, 255, 255) !important;
+        }
+      }
+
+      .at-icon-wrapper {
+        float: none;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    position: absolute;
+    top: 50px + 240px + 40px;
+    left: 0;
+    right: auto;
+    bottom: auto;
+
+    .btn-share {
+      display: block;
+    }
+
+    .at-resp-share-element {
+      .at-share-btn-elements {
+        background-color: transparent;
+        border-top: none;
+      }
+
+      .at-share-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: transparent !important;
+        border-left: none;
+
+        &:hover,
+        &:focus {
+          background-color: $secondary !important;
+        }
+      }
+    }
+  }
+}

@@ -30,7 +30,7 @@ class UVigoMenuEseiWidget extends WP_Widget
      */
     public function widget($args, $instance)
     {
-        echo $args['before_widget'];
+        $output = $args['before_widget'];
 
         // /** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
         $title = apply_filters('widget_title', $instance['title'], $instance, $this->id_base);
@@ -41,33 +41,41 @@ class UVigoMenuEseiWidget extends WP_Widget
         //     echo $args['before_title'] . $title . $args['after_title'];
         // }
 
-        echo '<div class="sidebar-menu-toggle open2">';
-        echo '<span class="text-open">';
+        $output .= '<div class="sidebar-menu-toggle open2">';
+        $output .= '<span class="text-open">';
         if ($title) {
-            echo $title;
+            $output .= $title;
         } else {
-            echo __('Navigation', 'uvigothemewp');
+            $output .= __('Navigation', 'uvigothemewp');
         }
-        echo '</span>';
-        echo '<span class="text-close">' . __('Close', 'uvigothemewp') . '</span>';
-        echo '</div>';
+        $output .= '</span>';
+        $output .= '<span class="text-close">' . __('Close', 'uvigothemewp') . '</span>';
+        $output .= '</div>';
 
         $classname = ! empty($instance['classname']) ? $instance['classname'] : '';
 
         // outputs the content of the widget based on shortcode
         // IMPORTANTE : LA PROPIEDAD menu_level NO EXISTE EN WORDPRES, ES UN PARÁMETRO DEFINIDO PARA UTILIZAR COMO CRITERIO EN UN FILTRO ( HOOK ) POSTERIOR
         if (has_nav_menu('primary_navigation')) {
-            wp_nav_menu([
+            $output_menu = wp_nav_menu([
                 'theme_location'  => 'primary_navigation',
                 'container_id'    => 'sidebar-menu',
                 'container_class' => 'sidebar-menu',
                 // 'menu_class'      => 'sidebar-menu',
                 'walker'          => new UVigoMenuWalker(),
-                'menu_level'      => 2
+                'menu_level'      => 2,
+                'echo'            => false,
             ]);
         }
 
-        echo $args['after_widget'];
+        if (empty($output_menu)) {
+            $output = '';
+        } else {
+            $output .= $output_menu;
+            $output .= $args['after_widget'];
+        }
+
+        echo $output;
     }
 
     /**

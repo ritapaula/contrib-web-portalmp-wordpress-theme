@@ -2,23 +2,18 @@
 import 'jquery';
 
 // Import everything from autoload
-import './autoload/**/*'
+import './autoload/**/*';
 
 // import local dependencies
 import Router from './util/Router';
 import common from './routes/common';
 import NavPrimary from './navigation/primary';
-import home from './routes/home';
-import aboutUs from './routes/about';
+import NavMobile from './navigation/mobile';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
   // All pages
   common,
-  // Home page
-  home,
-  // About Us page, note the change from about-us to aboutUs.
-  aboutUs,
 });
 
 // Load Events
@@ -26,5 +21,6 @@ jQuery(document).ready(() => {
   routes.loadEvents();
   // Load Navigation
   NavPrimary.start();
+  NavMobile.start();
 });
 

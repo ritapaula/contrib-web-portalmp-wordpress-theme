@@ -1,6 +1,18 @@
+@if(is_active_sidebar('esei-footer-news'))
+    @php(dynamic_sidebar('esei-footer-news'))
+@endif
+
+@if(is_active_sidebar('esei-footer'))
+    @php(dynamic_sidebar('esei-footer'))
+@endif
+
+<?php /*
 <div class="esei_actualidade">
     {!! do_shortcode('[uvigo_esei_featured title="Outras novas" mode="footer" button_title=""][/uvigo_esei_featured]') !!}
-</div>   
+</div>
+*/ ?>
+
+<?php /*
 <div class="esei_calidad">
     <div class="container">
         <div class="row justify-content-center">
@@ -15,6 +27,7 @@
         </div>
     </div>
 </div>
+
 <div class="esei_contact">
     <div class="container">
         <div class="row justif-content-between">
@@ -36,7 +49,7 @@
                     <ul id="menu-otras-secciones" class="list-peak">
                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a href="http://uvigo.gal/uvigo_gl/aviso.html">Contacto</a></li>
                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48"><a href="http://uvigo.gal/uvigo_gl/aviso.html">Reclamacións e suxestións</a></li>
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48"><a href="http://uvigo.gal/uvigo_gl/aviso.html">Aviso Legal e privacidade</a></li>            
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48"><a href="http://uvigo.gal/uvigo_gl/aviso.html">Aviso Legal e privacidade</a></li>
                     </ul>
                 </div>
             </section>
@@ -55,3 +68,4 @@
         </div>
     </div>
 </div>
+*/ ?>

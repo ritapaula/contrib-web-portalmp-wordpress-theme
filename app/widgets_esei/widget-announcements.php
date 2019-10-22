@@ -4,20 +4,19 @@ namespace UVigoThemeWPApp;
 
 use WP_Widget;
 
-class UVigoNewsWidget extends WP_Widget
+class UVigoAnnouncementsWidget extends WP_Widget
 {
-
     /**
      * Sets up the widgets name etc
      */
     public function __construct()
     {
         $widget_ops = array(
-            'classname' => 'widget-news',
-            'description' => esc_html__('List latest news', 'uvigothemewp'),
+            'classname' => 'widget-announcements',
+            'description' => esc_html__('List latest announcements', 'uvigothemewp'),
             'customize_selective_refresh' => true,
         );
-        parent::__construct('uvigo_news_widget', esc_html__('News widget', 'uvigothemewp'), $widget_ops);
+        parent::__construct('uvigo_announcements_widget', esc_html__('Announcements widget', 'uvigothemewp'), $widget_ops);
     }
 
     /**
@@ -38,7 +37,6 @@ class UVigoNewsWidget extends WP_Widget
         if (! $number) {
             $number = 5;
         }
-        $show_image   = isset($instance['show_image']) ? $instance['show_image'] : false;
         $show_excerpt = isset($instance['show_excerpt']) ? $instance['show_excerpt'] : false;
         $category     = isset($instance['category']) ? absint($instance['category']) : 0;
         $classname    = ! empty($instance['classname']) ? $instance['classname'] : '';
@@ -60,9 +58,6 @@ class UVigoNewsWidget extends WP_Widget
         if ($title) {
             echo $args['before_title'] . $title . $args['after_title'];
         }
-        if ($show_image) {
-            $classname .= ' has-thumbnail';
-        }
         if ($show_excerpt) {
             $classname .= ' has-excerpt';
         }
@@ -74,16 +69,16 @@ class UVigoNewsWidget extends WP_Widget
                 $title      = (! empty($post_title)) ? $post_title : __('(no title)');
                 ?>
                 <article class="post-item">
-                    <?php if ($show_image) : ?>
-                        <div class="post-thumbnail"><a href="<?php the_permalink($recent_post->ID); ?>"><?php echo get_the_post_thumbnail($recent_post->ID, 'large'); ?></a></div>
-                    <?php endif; ?>
                     <div class="post-date"><?php echo get_the_date('', $recent_post->ID); ?></div>
-                    <div class="post-title"><a class="post-link" href="<?php the_permalink($recent_post->ID); ?>"><?php echo $title ; ?></a></div>
-                    <?php if ($show_excerpt) : ?>
+                    <div class="post-title"><?php echo $title ; ?></div>
+                    <?php if ($show_excerpt && has_excerpt($recent_post->ID)) : ?>
                         <div class="post-excerpt">
                             <?php echo apply_filters('the_excerpt', get_the_excerpt($recent_post->ID)); ?>
                         </div>
                     <?php endif; ?>
+                    <div class="post-excerpt">
+                        <?php echo apply_filters('the_content', get_the_content(null, false, $recent_post->ID)); ?>
+                    </div>
                 </article>
             <?php endforeach; ?>
         </div>
@@ -100,7 +95,6 @@ class UVigoNewsWidget extends WP_Widget
     {
         $title        = isset($instance['title']) ? esc_attr($instance['title']) : '';
         $number       = isset($instance['number']) ? absint($instance['number']) : 5;
-        $show_image   = isset($instance['show_image']) ? (bool) $instance['show_image'] : false;
         $show_excerpt = isset($instance['show_excerpt']) ? (bool) $instance['show_excerpt'] : false;
         $category     = isset($instance['category']) ? absint($instance['category']) : 0;
         ?>
@@ -111,10 +105,6 @@ class UVigoNewsWidget extends WP_Widget
         <p>
             <label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts to show:'); ?></label>
             <input class="tiny-text" id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="number" step="1" min="1" value="<?php echo $number; ?>" size="3" />
-        </p>
-        <p>
-            <input class="checkbox" type="checkbox"<?php checked($show_image); ?> id="<?php echo $this->get_field_id('show_image'); ?>" name="<?php echo $this->get_field_name('show_image'); ?>" />
-            <label for="<?php echo $this->get_field_id('show_image'); ?>"><?php _e('Display thumbnail?', 'uvigothemewp'); ?></label>
         </p>
         <p>
             <input class="checkbox" type="checkbox"<?php checked($show_excerpt); ?> id="<?php echo $this->get_field_id('show_excerpt'); ?>" name="<?php echo $this->get_field_name('show_excerpt'); ?>" />
@@ -147,7 +137,6 @@ class UVigoNewsWidget extends WP_Widget
         $instance = $old_instance;
         $instance['title'] = sanitize_text_field($new_instance['title']);
         $instance['number'] = (int) $new_instance['number'];
-        $instance['show_image'] = isset($new_instance['show_image']) ? (bool) $new_instance['show_image'] : false;
         $instance['show_excerpt'] = isset($new_instance['show_excerpt']) ? (bool) $new_instance['show_excerpt'] : false;
         $instance['category'] = isset($new_instance['category']) ? (int) $new_instance['category'] : 0;
 
@@ -159,5 +148,5 @@ class UVigoNewsWidget extends WP_Widget
  * Widget "uvigo_menu_widget"
  */
 add_action('widgets_init', function () {
-    register_widget('UVigoThemeWPApp\UVigoNewsWidget');
+    register_widget('UVigoThemeWPApp\UVigoAnnouncementsWidget');
 });

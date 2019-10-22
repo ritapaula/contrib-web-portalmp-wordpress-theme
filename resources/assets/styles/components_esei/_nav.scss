@@ -1,17 +1,60 @@
-.web-esei {
-  .nav-link {
-    padding: initial;
-    letter-spacing: 0.65px;
-  }
 
+// Navegación especial
+
+.web-esei {
   .nav-primary {
+    .fill-menu {
+      display: none;
+    }
+
+    .nav-link {
+      padding: initial;
+      letter-spacing: 0.65px;
+    }
+
+    .sub-menu {
+      // top: calc(100% + 1px);
+      top: 72px;
+      left: -5px;
+      background-color: $white;
+
+      .nav-item {
+        color: $primary;
+
+        &::before {
+          margin-top: 0;
+          top: 3px;
+        }
+
+        & > .nav-link {
+          color: $primary;
+          font-weight: 400;
+          // padding-bottom: 0.625rem;
+          // padding-top: 0.625rem;
+          padding-bottom: 0.3125rem;
+          padding-top: 0.3125rem;
+          line-height: 1.3em;
+        }
+      }
+    }
+
     .nav > .nav-item {
       font-weight: 400;
+      position: relative;
+      margin-left: 0;
+      font-size: 1.125rem;
+      padding: 0 1.25rem 1.5rem 1.25rem;
+
+      &:last-child {
+        padding-right: 0;
+      }
 
       & > .nav-link {
         position: relative;
         color: $primary;
         background-color: initial;
+        border-top: none;
+        padding: 0.75rem 2px;
       }
 
       &.active {
@@ -26,78 +69,24 @@
             border-bottom: 3px solid $primary;
           }
         }
-      }
-    }
-  }
-}
 
-@media (min-width: 992px) {
-  .web-esei {
-    .nav-primary {
-      .sub-menu {
-        // top: calc(100% + 1px);
-        top: 72px;
-        left: -5px;
-        background-color: white;
+        .sub-menu {
+          max-height: 600px;
 
-        .nav-item {
-          color: $primary;
-
-          &::before {
-            margin-top: 0;
-            top: 3px;
-          }
-
-          & > .nav-link {
-            color: $primary;
+          .nav-link {
             font-weight: 400;
-            // padding-bottom: 0.625rem;
-            // padding-top: 0.625rem;
+            // padding-bottom: 0.5625rem;
+            // padding-top: 0.5625rem;
             padding-bottom: 0.3125rem;
             padding-top: 0.3125rem;
-            line-height: 1.3em;
-          }
-        }
-      }
 
-      .nav > .nav-item {
-        position: relative;
-        margin-left: 0;
-        font-size: 1.125rem;
-        padding: 0 1.25rem 1.5rem 1.25rem;
-
-        &:last-child {
-          padding-right: 0;
-        }
-
-        & > .nav-link {
-          border-top: none;
-          padding: 0.75rem 2px;
-        }
-
-        &.active {
-          .sub-menu {
-            max-height: 600px;
-
-            .nav-link {
-              font-weight: 400;
-              // padding-bottom: 0.5625rem;
-              // padding-top: 0.5625rem;
-              padding-bottom: 0.3125rem;
-              padding-top: 0.3125rem;
-
-              &:hover {
-                text-decoration: underline;
-                color: $secondary;
-              }
+            &:hover {
+              text-decoration: underline;
+              color: $secondary;
             }
           }
         }
       }
-    }
-
-    .fill-menu {
-      display: none;
     }
   }
 }

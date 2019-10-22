@@ -19,7 +19,7 @@
     ]
   },
   "publicPath": "/wp-content/themes/uvigothemewp",
-  "devUrl": "https://esei.ideit.software",
+  "devUrl": "https://esei.ideit.dev",
   "proxyUrl": "https://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [

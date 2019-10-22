@@ -107,18 +107,62 @@ export default {
           // Para ocultar o menú social cando facemos click fóra
           $(document).on('click', function(event) {
             if ( $(event.target).closest('.share-buttons').length === 0 ) {
-              $('.share-buttons .share-buttons-container').slideUp('400');
+              if ($('.btn-share', $shareBtn).is(':visible')) {
+                $('.share-buttons .share-buttons-container').slideUp('400');
+              }
             }
           });
         });
       }
-      const top = $('.wrap').offset().top + 40;
-      $shareBtn.css('top', top + 'px');
+      // const top = $('.wrap').offset().top + 40;
+      // $shareBtn.css('top', top + 'px');
         // } else {
         //     shareBtn.css('top', 'auto');
         // }
       $shareBtn.addClass('visible');
     }
+
+    $('#top-header__toggle-button').on('click', function(e) {
+      $('#top-header-menu').toggleClass('active');
+      e.stopPropagation();
+    });
+
+    $(document).on('click', function(e) {
+      if ($(e.target).is('#top-header-menu') === false) {
+        $('#top-header-menu').removeClass('active');
+      }
+    });
+
+    // Define a MediaQueryList Object with your media query passed like in CSS
+    const minWidthMatch = window.matchMedia('(min-width: 992px)');
+
+    // Define the code to execute
+    function changeMenuSidebar(mediaQueryList) {
+      const $sidebarMenu = $('.widget-sidebar-esei-menu');
+      const isResponsive = $sidebarMenu.length > 0 && $sidebarMenu.hasClass('responsive');
+
+      // Establecemos el título del botón del menú
+      const title = $sidebarMenu.find('.menu-header').text();
+      $sidebarMenu.find('.text-open').text(title);
+      $sidebarMenu.find('.text-close').text(title);
+
+      if (mediaQueryList.matches && isResponsive) {
+        $('aside.sidebar').prepend($sidebarMenu);
+        $sidebarMenu.removeClass('responsive');
+      } else {
+        if (!mediaQueryList.matches && !isResponsive) {
+          $('nav.breadcrumb-nav').before($sidebarMenu);
+          $sidebarMenu.addClass('responsive');
+        }
+      }
+    }
+
+    // Attach the event listener with the function to execute
+    minWidthMatch.addListener(changeMenuSidebar);
+
+    // Execute your function once in case your current screen size
+    // already mets the media query conditions
+    changeMenuSidebar(minWidthMatch);
 
   },
   finalize() {

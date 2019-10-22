@@ -5,6 +5,9 @@
     padding: 0 0 0 0;
 
     .textwidget {
+      font-weight: normal;
+      margin: 0;
+
       p,
       a,
       .elegant-icon {
@@ -95,7 +98,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@include media-breakpoint-up(lg) {
   .uvigo-footer {
     .esei_calidad {
       .sello {

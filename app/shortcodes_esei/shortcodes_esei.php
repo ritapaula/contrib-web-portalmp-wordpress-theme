@@ -8,8 +8,8 @@ const POST_CATEGORY_TERM_NEWS_SLUG = 'novas';
 
 /**
  * Shortcode "uvigo_esei_featured"
- * 
- * Actualidade e Eventos na ESEI 
+ *
+ * Actualidade e Eventos na ESEI
  *
  *
  * @param  array $atts The attributes from the shortcode
@@ -22,7 +22,7 @@ add_shortcode('uvigo_esei_featured', function ($atts) {
         'title' => 'Actualidade',
         'mode' => 'default', // default | footer
         'button_title' => 'Novas da ESEI',
-        'button_url' => 'https://esei.ideit.software/actualidade/'
+        'button_url' => '/actualidade/'
     );
 
     $args = shortcode_atts($defaults_atts, $atts, 'uvigo_esei_featured');
@@ -112,7 +112,7 @@ add_shortcode('uvigo_esei_featured', function ($atts) {
 
 /**
  * Shortcode "uvigo_generic_slider"
- * 
+ *
  * Encapsula con slider
  *
  *

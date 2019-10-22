@@ -4,6 +4,12 @@
     margin-bottom: 1.75rem;
   }
 
+  a.no-icon {
+    &::after {
+      display: none;
+    }
+  }
+
   a[target="_blank"] {
     &::after {
       @extend %uvigo-iconfont;

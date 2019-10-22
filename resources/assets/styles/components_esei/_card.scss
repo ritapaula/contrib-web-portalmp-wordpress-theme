@@ -20,7 +20,7 @@
         .card-title {
           text-transform: uppercase;
           letter-spacing: initial;
-          font-weight: 400;
+          font-weight: 500;
           font-size: 1rem;
           line-height: 1.5;
         }
@@ -31,7 +31,7 @@
   .frontpage-floor {
     &.icons {
       background-color: $primary;
-      color: white;
+      color: $white;
       padding: 65px 0 35px 0;
 
       .container {
@@ -65,12 +65,12 @@
 
           .card-title {
             letter-spacing: initial;
-            color: white;
+            color: $white;
             font-weight: 400;
             font-size: 1.125rem;
 
             a.card-link {
-              color: white;
+              color: $white;
             }
           }
         }
@@ -83,39 +83,32 @@
         .card {
           border: none;
         }
-      }
-    }
-  }
-}
 
-@media (min-width: 576px) and (max-width: 992px) {
-  .web-esei {
-    .frontpage-floor {
-      &.icons {
-        .card-group {
+        @include media-breakpoint-up(md) {
           flex-flow: row;
           flex-wrap: wrap;
 
           .card {
-            min-width: 200px;
+            min-width: 50%;
           }
         }
-      }
-    }
-  }
-}
 
-@media (min-width: 992px) {
-  .web-esei {
-    .frontpage-floor {
-      &.icons {
-        .card-group {
+        @include media-breakpoint-up(lg) {
           flex-flow: row;
-          flex-wrap: nowrap;
+          flex-wrap: wrap;
+
+          .card {
+            min-width: 33.33%;
+          }
         }
 
-        .card {
-          min-width: 150px;
+        @include media-breakpoint-up(xl) {
+          flex-flow: row;
+          flex-wrap: nowrap;
+
+          .card {
+            min-width: 10px;
+          }
         }
       }
     }

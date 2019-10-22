@@ -5,7 +5,7 @@ $slider_options = [
     'autoplay' => false,
     'responsive' => [
         [
-            'breakpoint' => 1024,
+            'breakpoint' => 1200,
             'settings' => [
                 'slidesToShow' => 3,
                 'dots' => false,
@@ -13,7 +13,7 @@ $slider_options = [
             ]
         ],
         [
-            'breakpoint' => 800,
+            'breakpoint' => 992,
             'settings' => [
                 'slidesToShow' => 2,
                 'dots' => true,
@@ -21,7 +21,7 @@ $slider_options = [
             ]
         ],
         [
-            'breakpoint' => 600,
+            'breakpoint' => 768,
             'settings' => [
                 'slidesToShow' => 1,
                 'dots' => true,
@@ -42,9 +42,9 @@ $slider_options = [
             @endforeach
       </div>
       @if ($featured_button_title !== '')
-      <div class="featured__footer row justify-content-end">
-        <a class="btn btn-primary" href="{{$featured_button_url}}">{{$featured_button_title}}</a>
-      </div>
+        <div class="featured__footer row justify-content-end">
+            <a class="btn btn-primary" href="{{$featured_button_url}}">{{$featured_button_title}}</a>
+        </div>
       @endif
     </div>
   </div>

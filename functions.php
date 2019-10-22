@@ -110,8 +110,10 @@ array_map(function ($file) use ($sage_error) {
     'widgets/widget-news',
     'widgets/widget-menu',
     'widgets/widget-social',
+    'widgets_esei/widget-announcements',
     'widgets_esei/widget-menu-esei',
     'wordpress/gallery',
+    'wordpress/splitmenu-walker',
     'wordpress/menu-walker',
     'update',
 ]);

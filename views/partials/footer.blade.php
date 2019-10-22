@@ -7,7 +7,7 @@
     @endif
     @if(is_active_sidebar('sidebar-sponsor'))
         <div class="sponsor">
-        @php(dynamic_sidebar('sidebar-sponsor'))
+            @php(dynamic_sidebar('sidebar-sponsor'))
         </div>
     @endif
   </div>

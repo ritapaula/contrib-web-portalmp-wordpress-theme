@@ -4,7 +4,7 @@ namespace UVigoThemeWPApp;
 
 use WP_Query;
 
-const POST_CATEGORY_TERM_ANNOUNCEMENT_SLUG = 'aviso';
+const POST_CATEGORY_TERM_ANNOUNCEMENT_SLUG = 'avisos';
 
 /**
  * Shortcode "uvsliders"

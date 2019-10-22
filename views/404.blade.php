@@ -9,4 +9,7 @@
     </div>
     {!! get_search_form(false) !!}
   @endif
+
+  <br><br><br><br>
+
 @endsection

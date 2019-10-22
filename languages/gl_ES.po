@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UVigo Multipurpose WordPress Theme\n"
 "POT-Creation-Date: 2019-07-16 13:23+0200\n"
-"PO-Revision-Date: 2019-07-16 13:24+0200\n"
+"PO-Revision-Date: 2019-08-28 19:45+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: gl_ES\n"
@@ -172,7 +172,7 @@ msgstr "Guía docente"
 
 #: views/partials/content-single-uvigo-subject.blade.php:114
 msgid "Link DocNet"
-msgstr "Enlace a DockNet"
+msgstr "Enlace a DocNet"
 
 #: views/partials/content-single-uvigo-teacher.blade.php:33
 msgid "Dedication"

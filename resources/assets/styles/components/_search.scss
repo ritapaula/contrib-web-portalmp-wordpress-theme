@@ -204,11 +204,15 @@
 .globalsearch__toggle-button {
   min-width: 21px;
   padding: 0;
-  margin-left: 2rem;
+  margin-left: 1rem;
   color: $primary;
   background-color: transparent;
   border: none;
   outline: none;
+
+  @include media-breakpoint-up(lg) {
+    margin-left: 2rem;
+  }
 
   &::before {
     font-size: 1.375rem;

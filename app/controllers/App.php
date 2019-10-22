@@ -28,6 +28,9 @@ class App extends Controller
             }
             return __('Latest Posts', 'uvigothemewp');
         }
+        if (is_category('avisos')) {
+            return 'Todos os avisos';
+        }
         if (is_archive()) {
             return get_the_archive_title();
         }
@@ -150,7 +153,9 @@ class App extends Controller
                 if ($teachers_page) {
                     $post_id = $post->ID;
                     $actual_title = $post->post_title;
-                    $ancestors[] = $teachers_page;
+                    // $ancestors[] = $teachers_page;
+                    $ancestors = get_post_ancestors($teachers_page);
+                    array_unshift($ancestors, get_post($teachers_page));
                 }
             } elseif (is_singular(['uvigo-subject'])) {
                 $subjects_root_page_id = apply_filters('uvigo_teaching_certification_subjects_root_page', null, $post->ID);
@@ -529,11 +534,44 @@ class App extends Controller
     {
         if (is_home() || is_singular(['post', 'uvigo-event'])) {
             $root_id = App::getHomePage();
+        } elseif (is_singular(['uvigo-teacher'])) {
+            $docencia_page = get_page_by_path('docencia');
+            if ($docencia_page) {
+                $root_id = $docencia_page->ID;
+            }
+        } elseif (is_singular(['uvigo-subject'])) {
+            $estudos_page = get_page_by_path('estudos');
+            if ($estudos_page) {
+                $root_id = $estudos_page->ID;
+            }
+        } elseif (is_category('avisos')) {
+            $front_page_id = get_option('page_on_front');
+            if ($front_page_id) {
+                $root_id = $front_page_id;
+            }
+        } elseif (is_404()) {
+            $front_page_id = get_option('page_on_front');
+            if ($front_page_id) {
+                $root_id = $front_page_id;
+            }
+        } elseif (is_search()) {
+            $front_page_id = get_option('page_on_front');
+            if ($front_page_id) {
+                $root_id = $front_page_id;
+            }
         } else {
             $root_id = App::getRootPage();
         }
 
         if (isset($root_id)) {
+            // if (intval($root_id) === 49) {
+            //     $image_icon = get_the_post_thumbnail($root_id, 'full', [ 'class' => 'header-image' ]);
+            //     $image_icon .= '<div class="sellos">';
+            //     $image_icon .= '<img width="150" height="125" src="/wp-content/uploads/2019/08/sello-euro-inf.png" alt="EURO-INF">';
+            //     $image_icon .= '<img width="150" height="125" src="/wp-content/uploads/2019/08/calidad-fides-audit.png" alt="FIDES-AUDIT">';
+            //     $image_icon .= '</div>';
+            //     return $image_icon;
+            // }
             return get_the_post_thumbnail($root_id, 'full', [ 'class' => 'header-image' ]);
         }
 
@@ -547,12 +585,23 @@ class App extends Controller
     {
         if (is_home() || is_singular(['post', 'uvigo-event'])) {
             $root_id = App::getHomePage();
+        } elseif (is_singular(['uvigo-teacher'])) {
+            $docencia_page = get_page_by_path('docencia');
+            if ($docencia_page) {
+                $root_id = $docencia_page->ID;
+            }
+        } elseif (is_singular(['uvigo-subject'])) {
+            $estudos_page = get_page_by_path('estudos');
+            if ($estudos_page) {
+                $root_id = $estudos_page->ID;
+            }
         } else {
             $root_id = App::getRootPage();
         }
         if (isset($root_id)) {
             return get_the_title($root_id);
         }
+
         return '';
     }
 }

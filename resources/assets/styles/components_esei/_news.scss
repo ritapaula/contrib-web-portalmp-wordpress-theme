@@ -1,0 +1,39 @@
+
+.widget-announcements {
+  .post-item + .post-item {
+    padding-top: 1.5rem;
+  }
+
+  .post-date {
+    line-height: 1rem;
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: #606060;
+    margin: 0;
+  }
+
+  .post-title {
+    font-size: 1rem;
+    line-height: 1.5;
+    min-height: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .post-excerpt {
+    font-weight: 300;
+
+    p {
+      font-weight: 300;
+      margin: 0;
+    }
+  }
+}
+
+.widget-announcements-link {
+  position: relative;
+
+  .button-announcements {
+    position: absolute;
+    right: 1.25rem;
+  }
+}

@@ -95,6 +95,19 @@ add_action('after_setup_theme', function () {
      * @see resources/assets/styles/layouts/_tinymce.scss
      */
     add_editor_style(asset_path('styles/tinymce.css'));
+
+    /**
+     * Disable UVigo taxonomies
+     */
+    add_filter('wpcoreuvigo_use_spectator_taxonomy_post_types', function () {
+        return false;
+    });
+    add_filter('wpcoreuvigo_use_universe_taxonomy_post_types', function () {
+        return false;
+    });
+    add_filter('wpcoreuvigo_use_geographic_taxonomy_post_types', function () {
+        return false;
+    });
 }, 20);
 
 /**
@@ -108,6 +121,23 @@ add_action('after_setup_theme', function () {
         'flex-height' => true,
     ));
 });
+
+/**
+ * Google Analytics
+ */
+add_action('wp_head', function () {
+    ?>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149500303-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149500303-1');
+    </script>
+    <?php
+}, 100);
 
 /**
  * Init actions
@@ -160,12 +190,16 @@ add_action('widgets_init', function () {
     $uvigo_list_custom_sidebars = apply_filters('uvigo_list_custom_sidebars', []);
 
     if (isset($uvigo_list_custom_sidebars) && sizeof($uvigo_list_custom_sidebars) > 0) {
-        foreach ($uvigo_list_custom_sidebars as $id => $sidebar_name) {
-            register_sidebar([
-                'name'        => $sidebar_name,
-                'id'          => $id,
-                'description' => esc_html__('Custom sidebar created by user.', 'uvigothemewp'),
-            ] + $config);
+        foreach ($uvigo_list_custom_sidebars as $id => $sidebar) {
+            if (is_string($sidebar)) {
+                register_sidebar([
+                    'name'        => $sidebar,
+                    'id'          => $id,
+                    'description' => esc_html__('Custom sidebar created by user.', 'uvigothemewp'),
+                ] + $config);
+            } else {
+                register_sidebar($sidebar);
+            }
         }
     }
 });

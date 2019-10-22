@@ -23,6 +23,34 @@
   font-style: normal;
 }
 
+// body {
+//   &::before {
+//     content: "xs";
+//     position: fixed;
+//     bottom: 10px;
+//     left: 10px;
+//     color: $gray-500;
+//     z-index: 100000;
+//     font-size: 0.75rem;
+
+//     @include media-breakpoint-up(sm) {
+//       content: "sm";
+//     }
+
+//     @include media-breakpoint-up(md) {
+//       content: "md";
+//     }
+
+//     @include media-breakpoint-up(lg) {
+//       content: "lg";
+//     }
+
+//     @include media-breakpoint-up(xl) {
+//       content: "xl";
+//     }
+//   }
+// }
+
 .video__action {
   position: absolute;
   top: 0;
@@ -185,4 +213,27 @@ article.hentry {
     color: #333;
     font-weight: 300;
   }
+}
+
+.uvigo_tax_forms__term {
+  &.level_1 {
+    margin-bottom: 2.375rem;
+  }
+
+  &.level_2 {
+    padding-top: 1rem;
+
+    h4 {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+.list-feed-item {
+  line-height: 1.5;
+}
+
+.white-space-nowrap {
+  white-space: nowrap;
 }

@@ -80,7 +80,7 @@
 }
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
+@include media-breakpoint-up(lg) {
   .web-esei {
     .uvigo-slide {
       .slick-slide {
@@ -92,7 +92,7 @@
         height: 132px;
 
         .container {
-          font-size: 1.875rem;
+          font-size: 1.5rem;
 
           .row {
             div[class*="col-"] {

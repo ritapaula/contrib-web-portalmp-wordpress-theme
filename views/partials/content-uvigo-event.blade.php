@@ -10,11 +10,11 @@
       </a>
     @endif
     {{-- @include('partials/entry-meta') --}}
+    <p class="entry-title mb-4"><a class="font-weight-normal" href="{{ get_permalink() }}">{{ get_the_title() }}</a></p>
     <p class="mb-2">
         <span class="icon_clock_alt" aria-hidden="true"></span>
         {{ $date }}
     </p>
-    <p class="entry-title mb-4"><a class="font-weight-normal" href="{{ get_permalink() }}">{{ get_the_title() }}</a></p>
     <p class="mb-0">
         <span class="icon_pin_alt" aria-hidden="true"></span>
         @if($place_url)

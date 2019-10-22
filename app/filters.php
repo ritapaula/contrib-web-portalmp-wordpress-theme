@@ -76,7 +76,7 @@ add_filter('excerpt_more', function () {
  */
 add_filter('excerpt_length', function () {
     return 25;
-}, 999);
+}, 100);
 
 /**
  * Change the Archive Title
@@ -248,7 +248,7 @@ add_filter('wp_nav_menu_objects', function ($sorted_menu_items, $args) {
                     unset($sorted_menu_items[$key]);
                 }
             }
-            error_log("sorted_menu_items : " . print_r($sorted_menu_items, true));
+            // error_log("sorted_menu_items : " . print_r($sorted_menu_items, true));
         } else {
             $sorted_menu_items = [];
         }

@@ -185,3 +185,53 @@ add_filter('uvigo_act_document_render_line', function ($output_file, $document) 
 
     return $output_file;
 }, 10, 2);
+
+/**
+ * Restringir la importación de Ofertas
+ */
+add_filter('uvigo_feedsreader_importer_uvigo_offers_offer_uvigo-offer_check_to_create', function ($to_create, $element) {
+    $titulaciones_value = $element->getAttributes()->getAttribute('uvigo_offers_offer_degrees');
+    $pos = stripos($titulaciones_value, 'Informática');
+    // Lo creará si encontramos la cadena
+    $to_create = ($pos !== false);
+    return $to_create;
+}, 10, 2);
+
+/**
+ * Restringir la importación de Prácticas
+ */
+add_filter('uvigo_feedsreader_importer_uvigo_offers_practice_uvigo-practice_check_to_create', function ($to_create, $element) {
+    $titulaciones_value = $element->getAttributes()->getAttribute('uvigo_offers_practice_degrees');
+    $pos = stripos($titulaciones_value, 'Informática');
+    // Lo creará si encontramos la cadena
+    $to_create = ($pos !== false);
+    return $to_create;
+}, 10, 2);
+
+/**
+ * Add Row Action on Post : Ofertas y Prácticas
+ */
+add_filter('post_row_actions', function ($actions, $post) {
+    // Check for your post type.
+    if ($post->post_type == "uvigo-offer"
+        || $post->post_type == "uvigo-practice") {
+        // Source Link
+        $source_url = null;
+        if ($post->post_type == "uvigo-offer") {
+            $source_url = get_post_meta($post->ID, 'uvigo_offers_offer_url', true);
+        }
+        if ($post->post_type == "uvigo-practice") {
+            $source_url = get_post_meta($post->ID, 'uvigo_offers_practice_url', true);
+        }
+        if (!empty($source_url)) {
+            $actions = array_merge($actions, array(
+                'source' => sprintf(
+                    '<a href="%1$s" target="_blank" >%2$s</a>',
+                    esc_url($source_url),
+                    'Ver Origen'
+                )
+            ));
+        }
+    }
+    return $actions;
+}, 10, 2);

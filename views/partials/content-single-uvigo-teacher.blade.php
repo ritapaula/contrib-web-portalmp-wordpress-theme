@@ -14,6 +14,7 @@
       </div>
     @endif
   </header>
+  {!! do_shortcode('[uvigo_teacher_notices teacher_id=' . get_the_ID() . ' ][/uvigo_teacher_notices]') !!}
   <div class="entry-section general-data">
     <div class="field">
       <span class="field__label">{{ __('Type', 'uvigothemewp') }}: </span>

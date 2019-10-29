@@ -23,33 +23,33 @@
   font-style: normal;
 }
 
-// body {
-//   &::before {
-//     content: "xs";
-//     position: fixed;
-//     bottom: 10px;
-//     left: 10px;
-//     color: $gray-500;
-//     z-index: 100000;
-//     font-size: 0.75rem;
+body {
+  &::before {
+    content: "xs";
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    color: $gray-500;
+    z-index: 100000;
+    font-size: 0.75rem;
 
-//     @include media-breakpoint-up(sm) {
-//       content: "sm";
-//     }
+    @include media-breakpoint-up(sm) {
+      content: "sm";
+    }
 
-//     @include media-breakpoint-up(md) {
-//       content: "md";
-//     }
+    @include media-breakpoint-up(md) {
+      content: "md";
+    }
 
-//     @include media-breakpoint-up(lg) {
-//       content: "lg";
-//     }
+    @include media-breakpoint-up(lg) {
+      content: "lg";
+    }
 
-//     @include media-breakpoint-up(xl) {
-//       content: "xl";
-//     }
-//   }
-// }
+    @include media-breakpoint-up(xl) {
+      content: "xl";
+    }
+  }
+}
 
 .video__action {
   position: absolute;

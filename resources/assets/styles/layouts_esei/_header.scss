@@ -1,7 +1,7 @@
 .banner {
   .brand-logo {
     img {
-      max-height: 52px;
+      max-height: 48px;
     }
   }
 
@@ -366,5 +366,32 @@
 
   @include media-breakpoint-up(xl) {
     display: block;
+  }
+}
+
+// Sellos de calidad
+
+.brand-quality {
+  position: absolute;
+  top: 0;
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+    left: -885px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    left: -925px;
+  }
+}
+
+.brand-header {
+  @include media-breakpoint-up(lg) {
+    margin-left: 80px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin-left: 45px;
   }
 }

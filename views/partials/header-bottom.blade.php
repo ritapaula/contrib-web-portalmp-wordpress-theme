@@ -1,6 +1,8 @@
 <div class="bottom-header">
   <div class="container">
 
+    <img src="@asset('images/iconos-calidad.png')" alt="" class="brand-quality">
+
     <div class="row bottom-header-row no-gutters2">
       <div class="brand-container col-9 col-xl-4">
 
